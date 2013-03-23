@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>jq.entry</title>
+	</head>
+	<script type="text/javascript" src="/js/lib/jquery-1.9.1.min.js"></script>
+	<script src="/js/lib/jquery-ui-1.10.2.custom.min.js"></script>
+	<script type="text/javascript" src="/js/lib/easing.js"></script>
+	<script src="js/lib/highlight.js"></script>
+	<script src="js/jq.entry.js"></script>
+	<link rel="stylesheet" type="text/css" href="/css/reset.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/highlight.css"/>
+	<link rel="stylesheet" href="css/style.css">
+	<body>
+
+	<div class="content">
+		<h1>jq.entry</h1>
+		<p class="small-description">Determine mousemove directions</p>
+		<span class="download-button">Download</span>
+	</div>
+
+	<nav class="menu">
+		<div class="content">
+			<ul>
+				<li><a href="#overview">overview</a></li>
+				<li><a href="#sample">sample</a></li>
+				<li><a href="https://github.com/NeXTs/jq.entry/zipball/master">download</a></li>
+				<li><a href="#usage">usage</a></li>
+				<li><a href="#options">options</a></li>
+				<li><a href="#example">example</a></li>
+				<li><a href="#about">about</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	<div class="content">
+		<h4 id="overview">Overview</h4>
+		<p>
+			Lightweight and cross-browser jQuery plugin to determine which side cursor enter or leave the element.
+		</p>
+
+		<h4 id="sample">Sample</h4>
+		<p>
+			<div class="examples">
+				<div class="five">Hover me</div>
+				<div class="two">Hover me</div>
+				<div class="four">Hover me</div>
+				<div class="one">Hover me</div>
+				<div class="three">hover me</div>
+			</div>
+			<div class="clear"></div>
+		</p>
+
+
+		<h4 id="usage">Download</h4>
+		<p>
+			You can download the source code from Github.
+			Download jq.entry.js
+		</p>
+
+		<h4>Implementation</h4>
+		<p>
+			Reading at any point and jQuery, jq.entry.js, and then run after it.
+		</p>
+<pre class="xml">
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"scripts/lib/jquery-1.9.1.min.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span>
+<span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"scripts/jq.entry.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script></span></span>
+</pre>
+
+		<h4>How to use</h4>
+		<p>
+			If you want to use the simplest is as follows.
+		</p>
+		<pre class="javascript">
+$(function(){
+
+	$('#elem').hover(function( event ){
+
+		var direction = $(this).entry({ e : event });
+		console.log( 'Enter direction: ' + direction );
+
+	}, function( event ){
+
+		var direction = $(item).entry({ e : event });
+		console.log( 'Leave direction: ' + direction );
+
+	});
+})
+		</pre>
+
+
+		<h4><span class="caution">Caution !</span></h4>
+		<p>
+			Padding inside element can break down the definition, try avoid using of paddings. Example of possible solution may be found below.
+		</p>
+
+		<h4 id="options">Options</h4>
+		<p>
+			Some options you can change
+		</p>
+		<table summary="Options">
+			<thead>
+				<tr>
+					<th>Key</th>
+					<td>Comment</td>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<th>invert</th>
+					<td>
+						<p>
+							(bool) <span class="string">Inverts direction</span>
+						</p>
+						<p>
+							Default: false
+						</p>
+					</td>
+				</tr>
+				<tr>
+					<th>sides</th>
+					<td>
+						<p>
+							(array) <span class="string">Name of border directions, grouped in css alike sequence.</span>
+						</p>
+						<p>
+							Default: [ 'up', 'right', 'down', 'left' ]
+						</p>
+					</td>
+				</tr>
+
+			</tbody>
+		</table>
+
+		<h4 id="example">May be useful for custom hover effect</h4>
+		<p>
+			Example: entry + jQuery UI slide effect	
+		</p>
+
+		<div class="container" id="container">
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+				    
+			    <div class="item-content">
+				        <img src="img/1.jpg" alt="image-sample">
+				    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/2.gif" alt="image-sample">
+			    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/3.jpg" alt="image-sample">
+			    </div>
+			</div>	
+
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+				    
+			    <div class="item-content">
+				        <img src="img/1.jpg" alt="image-sample">
+				    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/2.gif" alt="image-sample">
+			    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/3.jpg" alt="image-sample">
+			    </div>
+			</div>	
+
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+				    
+			    <div class="item-content">
+				        <img src="img/1.jpg" alt="image-sample">
+				    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/2.gif" alt="image-sample">
+			    </div>
+			</div>
+			    
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+			    
+			    <div class="item-content">
+			        <img src="img/3.jpg" alt="image-sample">
+			    </div>
+			</div>	
+
+			<div class="item">
+			    <div class="hover-wrap">
+			        <div class="hover-content">
+			            <span class="table">
+			                <span class="table-cell">
+			                    Custom hover effect
+			                </span>
+			            </span>
+			        </div>
+			    </div>
+				    
+			    <div class="item-content">
+				        <img src="img/1.jpg" alt="image-sample">
+				    </div>
+			</div>
+
+		 </div>	 
+		<div class="clear"></div>
+
+		<h4 id="about">Capable browsers</h4>
+		<p>
+			<ul>
+				<li>IE7+</li>
+				<li>all modern browsers</li>
+			</ul>
+		</p>
+
+		<h4>License</h4>
+		<a href="http://dlukov.mit-license.org/" target="_blank">The MIT License</a>
+		
+		<h4>If you've found a bug, etc.</h4>
+		
+		<p>
+			Please pull request to fork a github repository, if possible. I might be able to correspond to the time when there is a difficult case and get written on issues, someone may be able to support.
+		</p>
+		<p>
+			Regards use at your own risk!
+		</p>
+
+		<h4>Author</h4>
+
+		<p>
+			Denis Lukov - 
+			<a href="https://github.com/NeXTs">https://github.com/NeXTs</a>
+		</p>
+	</div>  
+
+	<script type="text/javascript">
+	    $(function(){
+
+	    	// highlight pre
+			$('pre').each(function() {
+				hljs.highlightBlock(this);
+			});
+
+			// direction example
+			$('.examples > div').hover(function(e){
+				var $item = $(this),
+	            	direction = $item.entry({e:e});
+	            if(typeof(direction) != 'undefined')
+	            	$item.html('mouseenter: <b>'+direction+'</b>');
+			}, function(e){
+				var $item = $(this),
+	            	direction = $item.entry({e:e});
+	            if(typeof(direction) != 'undefined')
+	            	$item.html('mouseleave: <b>'+direction+'</b>');
+			})
+
+			// can be used to
+	        $('#container > div.item').hover(function(event){
+	            var $item = $(this),
+	            	direction = $item.entry({e:event});
+
+	            if($item.hasClass('opened')) $item.find('.hover-wrap').stop(true,true).show();
+
+	            $.when($item.find('.hover-wrap').stop(true, true).show("slide", { direction: direction}, 255, 'easeOutQuad')).done(function(){
+	            	$item.addClass('opened');
+	            });
+
+	            var inverted_direction = $item.entry({e:event, invert: true});
+	            $item.siblings('.opened').removeClass('opened')
+	            	.find('.hover-wrap').hide("slide", { direction: direction}, 255, 'easeOutQuad');
+
+	        }, function(event){
+	            var $item = $(this),
+	            	direction = $item.entry({e:event});
+	            $.when($item.find('.hover-wrap').stop(true, true).hide("slide", { direction: direction}, 255, 'easeOutQuad')).done(function(){
+	            	$item.removeClass('opened');
+	            });
+
+	        });
+
+	    })
+
+	</script>
+
+	</body>
+</html>
