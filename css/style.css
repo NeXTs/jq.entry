@@ -56,6 +56,16 @@ html,body{
 body{
     background: url('../img/pattern5.png') repeat;
     font-family: Verdana;
+    text-align: center;
+}
+
+a{
+    color: tomato;
+    text-decoration: none;
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 .clear{
@@ -70,6 +80,8 @@ body{
     position: relative;
 	margin-left: 25%;
 	width: 700px;
+    text-align: left;
+    margin: 0 auto;
 }
 
 .examples > div{
@@ -181,4 +193,36 @@ h4{
 
 .caution{
     color: tomato;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+pre{
+    padding: 10px 0;
+    border-top: dotted rgba(0, 0, 0, 0.7) 1px;
+    border-bottom: dotted rgba(0, 0, 0, 0.7) 1px;
+}
+
+thead{
+    background: rgb(255, 214, 0);
+}
+
+tbody{
+    background: white;
+}
+
+th,td{
+    border: 1px solid rgb(173, 173, 173);
+    padding: 10px;
+}
+
+.string{
+    color: #d14;
+}
+
+.small-description{
+    font-size: 12px;
 }
