@@ -226,3 +226,13 @@ th,td{
 .small-description{
     font-size: 12px;
 }
+
+.fork-me{
+    display: block;
+    width: 149px;
+    height: 149px;
+    background: url('../img/forkme.png') no-repeat;
+    position: absolute;
+    left: 0;
+    top: 0;
+}
