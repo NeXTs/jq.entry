@@ -2,15 +2,32 @@
 <html>
 	<head>
 		<title>jq.entry</title>
+		<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
+		<script src="js/lib/jquery-ui-1.10.2.custom.min.js"></script>
+		<script type="text/javascript" src="js/lib/easing.js"></script>
+		<script src="js/lib/highlight.js"></script>
+		<script src="js/jq.entry.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/highlight.css"/>
+		<link rel="stylesheet" href="css/style.css">
 	</head>
-	<script type="text/javascript" src="js/lib/jquery-1.9.1.min.js"></script>
-	<script src="js/lib/jquery-ui-1.10.2.custom.min.js"></script>
-	<script type="text/javascript" src="js/lib/easing.js"></script>
-	<script src="js/lib/highlight.js"></script>
-	<script src="js/jq.entry.js"></script>
-	<link rel="stylesheet" type="text/css" href="css/highlight.css"/>
-	<link rel="stylesheet" href="css/style.css">
 	<body>
+
+	<div id="fb-root"></div>
+	<script>
+		(function(d, s, id) {
+		var js, fjs = d.getElementsByTagName(s)[0];
+		if (d.getElementById(id)) return;
+		js = d.createElement(s); js.id = id;
+		js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=317804928282180";
+		fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));
+
+		(function() {
+		var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+		po.src = 'https://apis.google.com/js/plusone.js';
+		var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+		})();
+	</script>
 	<a href="https://github.com/NeXTs" class="fork-me"></a>
 	<div class="content">
 		<h1>jq.entry</h1>
@@ -135,7 +152,7 @@ $(function(){
 
 		<h4 id="example">May be useful for custom hover effects</h4>
 		<p>
-			Example: jq.entry + jQuery UI slide effect. <a href="http://jsfiddle.net/c6ekC/1/" >Check source code of this at jsFiddle</a>.
+			Example: jq.entry + jQuery UI slide effect. <a href="http://jsfiddle.net/c6ekC/2/" >Check source code of this at jsFiddle</a>.
 		</p>
 
 		<div class="container" id="container">
@@ -328,6 +345,13 @@ $(function(){
 			Denis Lukov - 
 			<a href="https://github.com/NeXTs">https://github.com/NeXTs</a>
 		</p>
+
+		<div class="fb-like" data-href="http://nexts.github.com/jq.entry/" data-send="true" data-width="450" data-show-faces="true" data-font="verdana"></div>
+		<g:plusone size="medium" annotation="inline"></g:plusone>
+		
+		<div class="footer">
+			<span>Thank you</span>
+		</div>
 	</div>  
 
 	<script type="text/javascript">
