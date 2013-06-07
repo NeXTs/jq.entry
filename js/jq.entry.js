@@ -2,7 +2,7 @@
 * http://NeXTs.github.com/jq.entry/
 * Copyright (c) 2013 Denis Lukov; Licensed MIT */
 
-;(function($, undefined){
+;(function($){
 
   jQuery.fn.entry = function(options){
 
