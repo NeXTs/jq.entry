@@ -2,7 +2,7 @@
   "name": "jq.entry",
   "title": "jq.entry / jQuery plugin",
   "version": "1.0.0",
-  "description": "Cross-browser jQuery plugin to determine which side cursor enter or leave the element..",
+  "description": "jQuery plugin to determine side which cursor enters or leaves the element",
   "homepage": "https://github.com/NeXTs/jq.entry",
   "author": {
     "name": "Denis Lukov"

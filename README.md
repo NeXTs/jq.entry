@@ -1,5 +1,5 @@
 # jq.entry
 
-Cross-browser jQuery plugin to determine which side cursor enter or leave the element.
+jQuery plugin to determine side which cursor enters or leaves the element.
 
 Demos and usages are available [here](http://NeXTs.github.com/jq.entry/).
